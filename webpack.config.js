@@ -1,14 +1,17 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === 'dev'
+const isProd = !isDev
 
-module.exports = {
-  entry: './src/index.ts',
-  devtool: isDev ? 'eval-source-map' : 'source-map',
-  mode: isDev ? 'development' : 'production',
+const config = {
+  entry: {
+    'ts-react-draftjs': './src/index.ts'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'ts-react-draftjs.js',
+    filename: '[name].bundle.js',
     library: 'tsReactDraftjs',
     libraryTarget: 'umd'
   },
@@ -27,8 +30,26 @@ module.exports = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js']
-  },
-  externals: {
+  }
+}
+
+if (isDev) {
+  config.mode = 'development'
+  config.devtool = 'eval-source-map'
+  config.devServer = {
+    contentBase: './dist'
+  }
+  config.plugins = [
+    new CleanWebpackPlugin(['dist']),
+    new HtmlWebpackPlugin({
+      title: 'Development',
+      template: path.resolve(__dirname, './index.html')
+    })
+  ]
+} else if (isProd) {
+  config.mode = 'production'
+  config.devtool = 'source-map'
+  config.externals = {
     react: {
       commonjs: 'react',
       commonjs2: 'react',
@@ -43,3 +64,5 @@ module.exports = {
     }
   }
 }
+
+module.exports = config
