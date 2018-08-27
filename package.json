@@ -1,0 +1,32 @@
+{
+  "name": "ts-react-draftjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/cmjs/index.js",
+  "module": "dist/es6/index.js",
+  "scripts": {
+    "start": "NODE_ENV=dev webpack",
+    "start:build": "NODE_ENV=prod webpack",
+    "build:cmjs": "tsc -p tsconfig.json",
+    "build:es6": "tsc -p tsconfig.json --module ES6 --outDir dist/es6",
+    "build:web": "echo '空的'",
+    "build": "rm -rf dist && npm run build:cmjs; npm run build:es6"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^16.4.12",
+    "@types/react-dom": "^16.0.7",
+    "ts-loader": "^4.5.0",
+    "typescript": "^3.0.1",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0"
+  },
+  "dependencies": {
+    "draft-js": "^0.10.5",
+    "immutable": "^3.8.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  }
+}
