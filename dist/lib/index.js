@@ -1,8 +1,8 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('react')) :
-	typeof define === 'function' && define.amd ? define(['react'], factory) :
-	(global.tsReactDraftjs = factory(global.React));
-}(this, (function (React) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('react'), require('react-dom')) :
+	typeof define === 'function' && define.amd ? define(['react', 'react-dom'], factory) :
+	(global.tsReactDraftjs = factory(global.React,global.ReactDOM));
+}(this, (function (React,reactDom) { 'use strict';
 
 	var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -4995,7 +4995,8 @@
 
 	var index = {
 	    // Editor,
-	    Immutable: Immutable
+	    Immutable: Immutable,
+	    render: reactDom.render
 	};
 	console.log(React, Immutable, process.env.NODE_ENV);
 

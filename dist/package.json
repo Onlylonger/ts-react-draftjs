@@ -1,0 +1,19 @@
+{
+	"name": "ts-react-draftjs",
+	"version": "1.0.0",
+	"description": "",
+	"main": "lib/index.js",
+	"module": "es6/index.js",
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"repository": "",
+	"dependencies": {
+		"react": "^16.4.2",
+		"react-dom": "^16.4.2"
+	},
+	"peerDependencies": {
+		"react": "^0.14.0 || ^15.0.0-0 || ^16.0.0-0"
+	},
+	"private": false
+}
