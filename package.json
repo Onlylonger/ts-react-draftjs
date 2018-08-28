@@ -4,10 +4,10 @@
   "description": "",
   "main": "dist/cmjs/index.js",
   "module": "dist/es6/index.js",
+  "types": "./dist/typings/index.d.ts",
   "scripts": {
     "dev": "NODE_ENV=dev rollup -cw",
-    "build": "NODE_ENV=prod rollup -c",
-    "start": "NODE_ENV=dev webpack"
+    "build": "NODE_ENV=prod rollup -c"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,7 @@
     "rollup-plugin-commonjs": "^9.1.6",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-size-snapshot": "^0.6.1",
+    "rollup-plugin-typescript2": "^0.16.1",
     "typescript": "^3.0.1"
   },
   "dependencies": {
