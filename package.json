@@ -4,9 +4,8 @@
   "description": "",
   "main": "lib/index.js",
   "module": "es6/index.js",
-  "types": "./dist/typings/index.d.ts",
   "scripts": {
-    "dev": "NODE_ENV=dev rollup -c",
+    "dev": "NODE_ENV=dev rollup -cw",
     "build": "NODE_ENV=prod rollup -c"
   },
   "keywords": [],

@@ -2,3 +2,4 @@ node_modules/
 *.log
 .size-snapshot.json
 .rpt2_cache
+dist

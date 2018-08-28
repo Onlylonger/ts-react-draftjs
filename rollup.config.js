@@ -1,10 +1,11 @@
+import path from 'path'
+
 import { sizeSnapshot } from 'rollup-plugin-size-snapshot'
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import typescriptPlugin from 'rollup-plugin-typescript2'
 import typescript from 'typescript'
 import packageJson from 'rollup-plugin-generate-package-json'
-import path from 'path'
 
 import pkg from './package.json'
 
@@ -16,12 +17,28 @@ const libraryName = 'tsReactDraftjs'
 
 const config = {
   input: 'src/index.ts',
+  output: [
+    {
+      file: `dist/${pkg.main}`,
+      format: 'umd',
+      name: libraryName,
+      globals: globalsLibrary
+    },
+    {
+      file: `dist/${pkg.module}`,
+      format: 'es',
+      name: libraryName,
+      globals: globalsLibrary
+    }
+  ],
+  external: ['react', 'react-dom']
   plugins: [
     commonjs(),
     typescriptPlugin({
       typescript,
       tsconfig: './tsconfig.json',
-      clean: true
+      clean: true,
+      useTsconfigDeclarationDir: true
     }),
     resolve(),
     packageJson({
@@ -47,22 +64,6 @@ const config = {
     }),
     sizeSnapshot()
   ],
-  output: [
-    {
-      file: `dist/${pkg.main}`,
-      sourceMap: true,
-      format: 'umd',
-      name: libraryName,
-      globals: globalsLibrary
-    },
-    {
-      file: `dist/${pkg.module}`,
-      format: 'es',
-      name: libraryName,
-      globals: globalsLibrary
-    }
-  ],
-  external: ['react', 'react-dom']
 }
 
 export default config

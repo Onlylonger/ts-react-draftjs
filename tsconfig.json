@@ -10,5 +10,6 @@
     "baseUrl": "./src",
     "include": ["./src/**.tsx?$"],
     "sourceMap": true
+    // "declarationDir": "./dist/typings"
   }
 }
