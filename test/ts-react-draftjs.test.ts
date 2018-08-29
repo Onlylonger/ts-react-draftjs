@@ -1,4 +1,4 @@
-import DummyClass from '../src/ts-react-draftjs'
+import DummyClass from '../src/index'
 
 /**
  * Dummy test
