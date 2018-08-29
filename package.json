@@ -4,7 +4,7 @@
   "description": "",
   "keywords": [],
   "main": "dist/ts-react-draftjs.umd.js",
-  "module": "dist/ts-react-draftjs.es5.js",
+  "module": "dist/ts-react-draftjs.es6.js",
   "typings": "dist/types/ts-react-draftjs.d.ts",
   "files": [
     "dist"
