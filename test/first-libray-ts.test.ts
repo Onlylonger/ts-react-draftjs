@@ -1,4 +1,4 @@
-import DummyClass from '../src/first-libray-ts'
+import DummyClass from '../src/ts-react-draftjs'
 
 /**
  * Dummy test

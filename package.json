@@ -1,11 +1,11 @@
 {
-  "name": "first-libray-ts",
+  "name": "ts-react-draftjs",
   "version": "0.0.0",
   "description": "",
   "keywords": [],
-  "main": "dist/first-libray-ts.umd.js",
-  "module": "dist/first-libray-ts.es5.js",
-  "typings": "dist/types/first-libray-ts.d.ts",
+  "main": "dist/ts-react-draftjs.umd.js",
+  "module": "dist/ts-react-draftjs.es5.js",
+  "typings": "dist/types/ts-react-draftjs.d.ts",
   "files": [
     "dist"
   ],

@@ -7,7 +7,7 @@ import json from 'rollup-plugin-json'
 
 const pkg = require('./package.json')
 
-const libraryName = 'first-libray-ts'
+const libraryName = 'ts-react-draftjs'
 
 export default {
   input: `src/${libraryName}.ts`,
